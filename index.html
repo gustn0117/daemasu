@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOA 대마수 - 로아</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background: #fff; color: #000; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 15px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        nav .logo-area { display: flex; align-items: center; gap: 12px; }
+        nav .logo-area img { height: 40px; width: auto; object-fit: contain; }
+        nav .logo-area span { font-size: 18px; letter-spacing: 4px; font-weight: 700; color: #fff; }
+        nav .nav-links { display: flex; gap: 30px; list-style: none; }
+        nav .nav-links a { color: #aaa; text-decoration: none; font-size: 13px; letter-spacing: 2px; font-weight: 300; transition: color 0.3s; }
+        nav .nav-links a:hover { color: #fff; }
+        .img-section { width: 100%; max-width: 1200px; margin: 0 auto; line-height: 0; }
+        .img-section img { width: 100%; height: auto; display: block; object-fit: contain; }
+        #hero { padding-top: 70px; }
+        .section-divider { width: 100%; padding: 50px 0; text-align: center; background: #fff; line-height: 1; }
+        .section-divider h2 { font-size: 13px; letter-spacing: 5px; font-weight: 300; color: #555; text-transform: uppercase; }
+        footer { background: #0a0a0a; padding: 50px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer .footer-logo { height: 30px; width: auto; margin-bottom: 20px; opacity: 0.6; }
+        footer p { font-size: 11px; color: #444; line-height: 2; letter-spacing: 1px; }
+        @media (max-width: 768px) { nav { padding: 12px 20px; } nav .logo-area img { height: 30px; } nav .logo-area span { font-size: 11px; } nav .nav-links { gap: 15px; } nav .nav-links a { font-size: 11px; } .section-divider { padding: 30px 0; } .section-divider h2 { font-size: 11px; } footer { padding: 30px 20px; } }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-area">
+            <a href="#hero" style="text-decoration:none;"><span>DAEMASU</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">HOME</a></li>
+            <li><a href="#product">PRODUCT</a></li>
+            <li><a href="#detail">DETAIL</a></li>
+            <li><a href="jp.html">日本語</a></li>
+        </ul>
+    </nav>
+    <div id="hero" style="padding-top: 70px;"></div>
+    <div class="section-divider"><h2>PRODUCT</h2></div>
+    <section id="product" class="img-section">
+        <img src="대마수 대표이미지/대마수 네이버스토어 메인이미지-20260310-1.1.png" alt="대마수 대표이미지">
+    </section>
+    <div class="section-divider"><h2>DETAIL</h2></div>
+    <section id="detail" class="img-section">
+        <img src="대마수 상세페이지/대마수 상세페이지-20260309.png" alt="대마수 상세페이지">
+    </section>
+    <footer>
+        <img class="footer-logo" src="LOA CONFIDENTIAL.png" alt="LOA">
+        <p>LOA Inc. | 로아<br>&copy; 2026 LOA. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
