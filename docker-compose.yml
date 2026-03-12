@@ -1,0 +1,7 @@
+services:
+  app:
+    build: .
+    container_name: daemasu
+    restart: unless-stopped
+    ports:
+      - "3099:80"
