@@ -10,8 +10,7 @@
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(35,70,45,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); }
         nav .logo-area { display: flex; align-items: center; gap: 12px; }
         nav .logo-area img { height: 40px; width: auto; object-fit: contain; }
-        nav .logo-area span { font-size: 18px; letter-spacing: 4px; font-weight: 700; color: #fff; }
-        nav .nav-links { display: flex; gap: 30px; list-style: none; }
+        nav .nav-links { display: flex; gap: 30px; list-style: none; flex-wrap: wrap; }
         nav .nav-links a { color: #aaa; text-decoration: none; font-size: 13px; letter-spacing: 2px; font-weight: 300; transition: color 0.3s; }
         nav .nav-links a:hover { color: #fff; }
         .img-section { width: 100%; max-width: 1200px; margin: 0 auto; line-height: 0; }
@@ -22,7 +21,7 @@
         footer { background: #0a0a0a; padding: 50px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
         footer .footer-logo { height: 30px; width: auto; margin-bottom: 20px; opacity: 0.6; }
         footer p { font-size: 11px; color: #444; line-height: 2; letter-spacing: 1px; }
-        @media (max-width: 768px) { nav { padding: 12px 20px; } nav .logo-area img { height: 30px; } nav .logo-area span { font-size: 11px; } nav .nav-links { gap: 15px; } nav .nav-links a { font-size: 11px; } .section-divider { padding: 30px 0; } .section-divider h2 { font-size: 11px; } footer { padding: 30px 20px; } }
+        @media (max-width: 768px) { nav { padding: 12px 20px; } nav .logo-area img { height: 30px; } nav .nav-links { gap: 10px; } nav .nav-links a { font-size: 10px; letter-spacing: 1px; } .section-divider { padding: 30px 0; } .section-divider h2 { font-size: 11px; } footer { padding: 30px 20px; } }
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -33,19 +32,40 @@
         </div>
         <ul class="nav-links">
             <li><a href="#hero">HOME</a></li>
+            <li><a href="#medical">MEDICAL</a></li>
             <li><a href="#product">PRODUCT</a></li>
-            <li><a href="#detail">DETAIL</a></li>
+            <li><a href="#check1">CHECK 1</a></li>
+            <li><a href="#check2">CHECK 2</a></li>
+            <li><a href="#why">WHY?</a></li>
+            <li><a href="#who">WHO</a></li>
+            <li><a href="#method">METHOD</a></li>
             <li><a href="jp.html">日本語</a></li>
         </ul>
     </nav>
     <div id="hero" style="padding-top: 70px;"></div>
-    <div class="section-divider"><h2>PRODUCT</h2></div>
-    <section id="product" class="img-section">
+    <section id="main-product" class="img-section">
         <img src="대마수 대표이미지/대마수 네이버스토어 메인이미지-20260310-1.1.png" alt="대마수 대표이미지">
     </section>
-    <div class="section-divider"><h2>DETAIL</h2></div>
-    <section id="detail" class="img-section">
-        <img src="대마수 상세페이지/대마수 상세페이지-20260309.png?v=2" alt="대마수 상세페이지">
+    <section id="medical" class="img-section">
+        <img src="대마수 상세페이지/kr-medical.png" alt="대마수 상세페이지">
+    </section>
+    <section id="product" class="img-section">
+        <img src="대마수 상세페이지/kr-product.png" alt="대마수 상세페이지">
+    </section>
+    <section id="check1" class="img-section">
+        <img src="대마수 상세페이지/kr-check1.png" alt="대마수 상세페이지">
+    </section>
+    <section id="check2" class="img-section">
+        <img src="대마수 상세페이지/kr-check2.png" alt="대마수 상세페이지">
+    </section>
+    <section id="why" class="img-section">
+        <img src="대마수 상세페이지/kr-why.png" alt="대마수 상세페이지">
+    </section>
+    <section id="who" class="img-section">
+        <img src="대마수 상세페이지/kr-who.png" alt="대마수 상세페이지">
+    </section>
+    <section id="method" class="img-section">
+        <img src="대마수 상세페이지/kr-method.png" alt="대마수 상세페이지">
     </section>
     <footer>
         <img class="footer-logo" src="LOA CONFIDENTIAL.png" alt="LOA">
