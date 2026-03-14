@@ -10,19 +10,20 @@
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(35,70,45,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); }
         nav .logo-area { display: flex; align-items: center; gap: 12px; }
         nav .logo-area img { height: 40px; width: auto; object-fit: contain; }
-        nav .nav-links { display: flex; gap: 30px; list-style: none; flex-wrap: wrap; }
-        nav .nav-links a { color: #fff; text-decoration: none; font-size: 15px; letter-spacing: 2px; font-weight: 600; transition: color 0.3s; }
-        nav .nav-links a:hover { color: #fff; }
+        nav .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+        nav .nav-links > li { display: flex; align-items: center; }
+        nav .nav-links > li > a { color: #fff; text-decoration: none; font-size: 15px; letter-spacing: 2px; font-weight: 600; transition: color 0.3s; }
+        nav .nav-links > li > a:hover { color: #ccc; }
         .lang-selector { position: relative; }
-        .lang-btn { display: flex; align-items: center; gap: 6px; cursor: pointer; color: #fff; font-size: 15px; letter-spacing: 2px; font-weight: 600; background: none; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; padding: 5px 10px; transition: all 0.3s; }
-        .lang-btn:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+        .lang-btn { display: flex; align-items: center; gap: 6px; cursor: pointer; color: #fff; font-size: 15px; letter-spacing: 2px; font-weight: 600; background: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; padding: 5px 12px; transition: all 0.3s; }
+        .lang-btn:hover { border-color: rgba(255,255,255,0.5); }
         .lang-btn .flag { font-size: 16px; }
-        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: #fff; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); overflow: hidden; min-width: 150px; z-index: 200; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: #fff; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); overflow: hidden; min-width: 160px; z-index: 200; }
         .lang-dropdown.open { display: block; }
-        .lang-dropdown a { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: #222; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 0; transition: background 0.2s; white-space: nowrap; }
-        .lang-dropdown a:hover { background: #e8e8e8; color: #000; }
+        .lang-dropdown a { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: #000 !important; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 0 !important; transition: background 0.2s; white-space: nowrap; }
+        .lang-dropdown a:hover { background: #eee; }
         .lang-dropdown a .flag { font-size: 20px; line-height: 1; }
-        .lang-dropdown a.active { background: #d4e8da; font-weight: 700; color: #1a3d25; }
+        .lang-dropdown a.active { background: #d4e8da; font-weight: 700; color: #1a3d25 !important; }
         .img-section { width: 100%; max-width: 1200px; margin: 0 auto; line-height: 0; }
         .img-section img { width: 100%; height: auto; display: block; object-fit: contain; }
         #hero { padding-top: 70px; }
