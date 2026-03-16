@@ -18,6 +18,11 @@
         nav .logo-area a { text-decoration: none; display: flex; align-items: baseline; gap: 8px; }
         nav .logo-area .logo-main { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: 4px; font-family: 'Arial Black', 'Helvetica Neue', sans-serif; }
         nav .logo-area .logo-sub { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 2px; font-weight: 400; }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; transition: all 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
         nav .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
         nav .nav-links > li { display: flex; align-items: center; }
         nav .nav-links > li > a { color: #fff; text-decoration: none; font-size: 15px; letter-spacing: 2px; font-weight: 600; transition: color 0.3s; }
@@ -35,12 +40,35 @@
         .img-section { width: 100%; max-width: 1200px; margin: 0 auto; line-height: 0; }
         .img-section img { width: 100%; height: auto; display: block; object-fit: contain; }
         #hero { padding-top: 70px; }
-        .section-divider { width: 100%; padding: 50px 0; text-align: center; background: #fff; line-height: 1; }
-        .section-divider h2 { font-size: 13px; letter-spacing: 5px; font-weight: 300; color: #555; text-transform: uppercase; }
         footer { background: rgba(35,70,45,0.95); padding: 50px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-        footer .footer-logo { height: 30px; width: auto; margin-bottom: 20px; opacity: 0.6; }
         footer p { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 2; letter-spacing: 1px; }
-        @media (max-width: 768px) { nav { padding: 12px 20px; } nav .logo-area .logo-main { font-size: 16px; letter-spacing: 2px; } nav .logo-area .logo-sub { font-size: 9px; } nav .nav-links { gap: 10px; } nav .nav-links a { font-size: 10px; letter-spacing: 1px; } .section-divider { padding: 30px 0; } .section-divider h2 { font-size: 11px; } footer { padding: 30px 20px; } }
+        @media (max-width: 768px) {
+            nav { padding: 14px 20px; }
+            nav .logo-area .logo-main { font-size: 18px; letter-spacing: 3px; }
+            nav .logo-area .logo-sub { font-size: 9px; }
+            .hamburger { display: block; }
+            nav .nav-links {
+                display: none;
+                position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+                width: 100%; height: 100vh;
+                flex-direction: column; gap: 0;
+                background: #fff;
+                overflow-y: auto;
+                padding-top: 80px;
+                z-index: 99;
+            }
+            nav .nav-links.open { display: flex; }
+            nav .nav-links > li { width: 100%; border-bottom: 1px solid #eee; }
+            nav .nav-links > li > a {
+                color: #222 !important; font-size: 18px; font-weight: 700;
+                letter-spacing: 1px; padding: 22px 28px; display: block; width: 100%;
+            }
+            nav .nav-links > li > a:active { background: #f5f5f5; color: #000 !important; }
+            nav .nav-links > li.lang-selector { padding: 16px 28px; }
+            .lang-btn { color: #222; border-color: rgba(0,0,0,0.2); font-size: 14px; }
+            .lang-dropdown { position: static; margin-top: 10px; box-shadow: none; border: 1px solid #ddd; }
+            footer { padding: 30px 20px; }
+        }
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -49,15 +77,18 @@
         <div class="logo-area">
             <a href="#hero"><span class="logo-main">DAEMASU</span><span class="logo-sub">露芽</span></a>
         </div>
+        <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
         <ul class="nav-links">
-            <li><a href="#hero">HOME</a></li>
-            <li><a href="#medical">MEDICAL</a></li>
-            <li><a href="#product">PRODUCT</a></li>
-            <li><a href="#check1">CHECK 1</a></li>
-            <li><a href="#check2">CHECK 2</a></li>
-            <li><a href="#why">WHY?</a></li>
-            <li><a href="#who">WHO</a></li>
-            <li><a href="#method">INSTRUCTION</a></li>
+            <li><a href="#hero" onclick="closeMenu()">Home</a></li>
+            <li><a href="#medical" onclick="closeMenu()">Medical</a></li>
+            <li><a href="#product" onclick="closeMenu()">Product</a></li>
+            <li><a href="#check1" onclick="closeMenu()">Check 1</a></li>
+            <li><a href="#check2" onclick="closeMenu()">Check 2</a></li>
+            <li><a href="#why" onclick="closeMenu()">Why?</a></li>
+            <li><a href="#who" onclick="closeMenu()">WHO</a></li>
+            <li><a href="#method" onclick="closeMenu()">Instruction</a></li>
             <li class="lang-selector">
                 <button class="lang-btn" onclick="document.querySelector('.lang-dropdown').classList.toggle('open')">
                     <span class="flag">🇯🇵</span> 日本語 ▾
@@ -74,34 +105,37 @@
         <img src="대마수 대표이미지/대마수 네이버스토어 메인이미지-20260310-1.1.png" alt="大麻水 代表イメージ">
     </section>
     <section id="medical" class="img-section">
-        <img src="대마수 상세페이지/jp-medical.png?v=8" alt="大麻水 詳細ページ">
+        <img src="대마수 상세페이지/jp-medical.png?v=9" alt="大麻水 詳細ページ">
     </section>
     <section id="product" class="img-section">
-        <img src="대마수 상세페이지/jp-product.png?v=8" alt="大麻水 詳細ページ">
+        <img src="대마수 상세페이지/jp-product.png?v=9" alt="大麻水 詳細ページ">
     </section>
     <section id="check1" class="img-section">
-        <img src="대마수 상세페이지/jp-check1.png?v=8" alt="大麻水 詳細ページ">
+        <img src="대마수 상세페이지/jp-check1.png?v=9" alt="大麻水 詳細ページ">
     </section>
     <section id="check2" class="img-section">
-        <img src="대마수 상세페이지/jp-check2.png?v=8" alt="大麻水 詳細ページ">
+        <img src="대마수 상세페이지/jp-check2.png?v=9" alt="大麻水 詳細ページ">
     </section>
     <section id="why" class="img-section">
-        <img src="대마수 상세페이지/jp-why.png?v=8" alt="大麻水 詳細ページ">
+        <img src="대마수 상세페이지/jp-why.png?v=9" alt="大麻水 詳細ページ">
     </section>
     <section id="who" class="img-section">
-        <img src="대마수 상세페이지/jp-who.png?v=8" alt="大麻水 詳細ページ">
+        <img src="대마수 상세페이지/jp-who.png?v=9" alt="大麻水 詳細ページ">
     </section>
     <section id="method" class="img-section">
-        <img src="대마수 상세페이지/jp-method.png?v=8" alt="大麻水 詳細ページ">
+        <img src="대마수 상세페이지/jp-method.png?v=9" alt="大麻水 詳細ページ">
     </section>
     <footer>
         <div style="display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:12px;">
             <span style="font-size:20px;font-weight:800;color:rgba(255,255,255,0.8);letter-spacing:4px;font-family:'Arial Black','Helvetica Neue',sans-serif;">DAEMASU</span>
             <span style="font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:2px;">露芽</span>
-            <p>&copy; 2026. LOA Co. All Rights Reserved.</p>
         </div>
+        <p>&copy; 2026. LOA Co. All Rights Reserved.</p>
         <p>로아 | auseon@naver.com</p>
     </footer>
-    <script>document.addEventListener('click',function(e){if(!e.target.closest('.lang-selector')){document.querySelector('.lang-dropdown').classList.remove('open')}});</script>
+    <script>
+    function closeMenu(){document.querySelector('.nav-links').classList.remove('open');document.querySelector('.hamburger').classList.remove('active');}
+    document.addEventListener('click',function(e){if(!e.target.closest('.lang-selector')){document.querySelector('.lang-dropdown').classList.remove('open')}});
+    </script>
 </body>
 </html>
